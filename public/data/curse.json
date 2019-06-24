@@ -1,82 +1,26 @@
 [
     {
-        "id": "pornire-1",
-        "judet": "cluj",
-        "oras": "cluj-napoca",
-        "adresa": "herculane nr.3",
+        "id": 1,
+        "pornire": "cluj",
+        "destinatie": "alba",
         "tip-marfa": "mobila"
     },
     {
-        "id": "destinatie-1",
-        "judet": "alba",
-        "oras":"aiud",
-        "adresa":"morii nr.74"
+        "id": 2,
+        "pornire": "aiud",
+        "destinatie": "targu-mures",
+        "tip-marfa": "masini"
     },
     {
-        "id":"pornire-2",
-        "judet": "alba",
-        "oras": "aiud",
-        "adresa": "morii nr.74",
+        "id": 3,
+        "pornire": "tismioara",
+        "destinatie": "satu-mare",
         "tip-marfa": "electrocasnice"
-        
-      },
-        {
-            "id":"destinatie-2",
-            "judet": "targu-mures",
-            "oras": "targu-mures",
-            "adresa": "marius-logan nr.4"
-          },
-    {
-        "id": "pornire-3",
-        "judet":"covasna",
-        "oras":"covasna",
-        "adresa":"elisabeta nr.6",
-        "tip-marfa":"masini"
     },
     {
-        "id": "destinatie-3",
-        "judet":"vaslui",
-        "oras":"vaslui",
-        "adresa":"carparilor"
-    },
-
-    {
-        "id": "pornire-4",
-        "judet":"bacau",
-        "oras":"bacau",
-        "adresa":"strada cuza voda nr.12",
-        "tip-marfa":"metale"
-    },
-    {
-        "id": "destinatie-4",
-        "judet":"olt",
-        "oras":"caracal",
-        "adresa":"spiritu haret 68"
-    },
-    {
-        "id": "pornire-5",
-        "judet":"craiova",
-        "oras":"craiova",
-        "adresa":"mehedinti nr.13",
-        "tip-marfa":"textile"
-    },
-    {
-        "id": "destinatie-5",
-        "judet":"satu-mare",
-        "oras":"carei",
-        "adresa":"plevnei 543"
-    },
-    {
-        "id": "pornire-6",
-        "judet":"timis",
-        "oras":"timisoara",
-        "adresa":"artelor nr.14",
-        "tip-marfa":"anvelope"
-    },
-    {
-        "id": "destinatie-6",
-        "judet":"hunedoara",
-        "oras":"deva",
-        "adresa":"republicii 13"
+        "id": 4,
+        "pornire": "oradea",
+        "destinatie": "sibiu",
+        "tip-marfa": "metale"
     }
 ]
