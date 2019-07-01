@@ -3,12 +3,12 @@
 
 <head>
     <title>webLogistics</title>
-    <link rel="stylesheets" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css"/>
 </head>
 
 <body>
     <header>
-        <h1 style="text-align:center">AutoLogistics</h1>
+        <h1>AutoLogistics</h1>
         <h2 class="logo"></h2>
         <ul class="first-button"> comenzi marfa
             <li id="1"><a href="#" data-page="ofer-marfa">ofer-marfa</a></li>
@@ -16,37 +16,35 @@
         </ul>
         <ul class="first-button"> Dispecer Transport
             <li id="1"><a href="#" data-page="caut-transport">dispecer-transport</a></li>
-            <li id="2"><a href="#" data-page="ofer-transport">dispecer-marfa</a></li>
+            <li id="2"><a href="#" data-page="ofer-transport">dispecer-marfa</a></li>   
         </ul>
 
     </header>
     <main>
         <aside></aside>
         <section>
-            <table id="curse" border="2">
+            <table id="curse">
                 <thead>
-                    <tr>
-                        <th>
-                <tbody>
-                    <td>Pornire
-                    <td><input type="text" name="Pornire" placeholder="Pornire" required></td>
-                    </td>
-                    <td>Destinatie
-                    <td><input type="text" name="Destinatie" placeholder="Destinatie" required></td>
-                    </td>
-                    <td>marfa
-                    <td><input type="text" name="tip-marfa" placeholder="tip-marfa" required></td>
-                    <td><button type="submit" onclick="saveCurse()">cautare</button></td>
-                    </td>
-                </tbody>
-                </th>
-                <th>
-
-                </th>
+                <tr class="row">
+                    <th>startcity</th>
+                    <th>address</th>
+                    <th>endcity</th>
+                    <th>delivery</th>
+                    <th>marfa</th>
+                    <th>driver_id</th>
+                    <th>date/time</th>
                 </tr>
                 </thead>
+                <tbody>
 
-
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
             </table>
         </section>
     </main>

@@ -1,26 +1,32 @@
 [
     {
         "id": 1,
-        "pornire": "cluj",
-        "destinatie": "alba",
-        "tip-marfa": "mobila"
+        "pornire": "cluj-napoca",
+        "destinatie": "alba-iulia",
+        "marfa": "mobila"
     },
     {
         "id": 2,
         "pornire": "aiud",
         "destinatie": "targu-mures",
-        "tip-marfa": "masini"
+        "marfa": "masini"
     },
     {
         "id": 3,
-        "pornire": "tismioara",
+        "pornire": "timisoara",
         "destinatie": "satu-mare",
-        "tip-marfa": "electrocasnice"
+        "marfa": "electrocasnice"
     },
     {
         "id": 4,
         "pornire": "oradea",
         "destinatie": "sibiu",
-        "tip-marfa": "metale"
-    }
-]
+        "marfa": "metale"
+    },
+    {
+        "id": 5,
+        "pornire": "sebes",
+        "destinatie": "bucuresti",
+        "marfa": "parchet"
+    }    
+    ]
