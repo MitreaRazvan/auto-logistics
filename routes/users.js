@@ -8,13 +8,4 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-const id = new Date().getTime();
-  orders.push({
-    id,
-    startcity,
-    address,
-    endcity,
-    deilvery,
-    marfa,
-    driver_id 
-  });
+
