@@ -21,15 +21,16 @@ var API_METHOD = {
     DELETE:'DELETE'
 }
 
-
-fetch(API_URL.READ).then(function(r){
+if (document.querySelector("#curse")) {
+  fetch(API_URL.READ).then(function(r){
     return r.json()
-}).then(function(curse){
-    console.log('curse', curse);
-    allCurse = curse;
-    display(curse);
-    //TODO - parcurgem lista de curse si generam cate un rand in tabel 
-})
+  }).then(function(curse){
+      console.log('curse', curse);
+      allCurse = curse;
+      display(curse);
+      //TODO - parcurgem lista de curse si generam cate un rand in tabel 
+  })
+}
 
 function display(curse) {
     console.warn(curse);
@@ -48,11 +49,13 @@ function display(curse) {
 }
 
 
-fetch(API_URL.READ_DRIVERS).then(function(r){
-  return r.json()
-}).then(function(response){
-  drivers.display(response);
-})
+if(document.querySelector("#drivers")) {
+  fetch(API_URL.READ_DRIVERS).then(function(r){
+    return r.json()
+  }).then(function(response){
+    drivers.display(response);
+  })  
+}
 
 const drivers = {
   display: function(drivers){

@@ -4,50 +4,50 @@
         "startcity": "cluj-napoca",
         "address": "alba-iulia",
         "endcity": "mobila",
-        "delivery":"muie",
+        "delivery":"orice",
         "marfa": "marfa",
-        "driverId":"muie",
-        "dateTime":"muie"
+        "driverId":"orice",
+        "dateTime":"orice"
     },
     {
         "id": 2,
         "startcity": "cluj-napoca",
         "address": "alba-iulia",
         "endcity": "mobila",
-        "delivery":"muie",
+        "delivery":"orice",
         "marfa": "marfa",
-        "driverId":"muie",
-        "dateTime":"muie"
+        "driverId":"orice",
+        "dateTime":"orice"
     },
     {
         "id": 3,
         "startcity": "cluj-napoca",
         "address": "alba-iulia",
         "endcity": "mobila",
-        "delivery":"muie",
+        "delivery":"orice",
         "marfa": "marfa",
-        "driverId":"muie",
-        "dateTime":"muie"
+        "driverId":"orice",
+        "dateTime":"orice"
     },
     {
         "id": 4,
         "startcity": "cluj-napoca",
         "address": "alba-iulia",
         "endcity": "mobila",
-        "delivery":"muie",
+        "delivery":"orice",
         "marfa": "marfa",
-        "driverId":"muie",
-        "dateTime":"muie"
+        "driverId":"orice",
+        "dateTime":"orice"
     },
     {
         "id": 5,
         "startcity": "cluj-napoca",
         "address": "alba-iulia",
         "endcity": "mobila",
-        "delivery":"muie",
+        "delivery":"orice",
         "marfa": "marfa",
-        "driverId":"muie",
-        "dateTime":"muie"
+        "driverId":"orice",
+        "dateTime":"orice"
 
  
     }

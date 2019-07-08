@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 });
 
 //http://localhost:3000/users/add
-router.post('./add', function (req, res, next) {
+router.post('/add', function(req, res, next) {
   var startcity = req.body.startcity;
   var address = req.body.address;
   var endcity = req.body.endcity;
