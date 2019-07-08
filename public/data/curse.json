@@ -1,32 +1,54 @@
 [
     {
         "id": 1,
-        "pornire": "cluj-napoca",
-        "destinatie": "alba-iulia",
-        "marfa": "mobila"
+        "startcity": "cluj-napoca",
+        "address": "alba-iulia",
+        "endcity": "mobila",
+        "delivery":"muie",
+        "marfa": "marfa",
+        "driverId":"muie",
+        "dateTime":"muie"
     },
     {
         "id": 2,
-        "pornire": "aiud",
-        "destinatie": "targu-mures",
-        "marfa": "masini"
+        "startcity": "cluj-napoca",
+        "address": "alba-iulia",
+        "endcity": "mobila",
+        "delivery":"muie",
+        "marfa": "marfa",
+        "driverId":"muie",
+        "dateTime":"muie"
     },
     {
         "id": 3,
-        "pornire": "timisoara",
-        "destinatie": "satu-mare",
-        "marfa": "electrocasnice"
+        "startcity": "cluj-napoca",
+        "address": "alba-iulia",
+        "endcity": "mobila",
+        "delivery":"muie",
+        "marfa": "marfa",
+        "driverId":"muie",
+        "dateTime":"muie"
     },
     {
         "id": 4,
-        "pornire": "oradea",
-        "destinatie": "sibiu",
-        "marfa": "metale"
+        "startcity": "cluj-napoca",
+        "address": "alba-iulia",
+        "endcity": "mobila",
+        "delivery":"muie",
+        "marfa": "marfa",
+        "driverId":"muie",
+        "dateTime":"muie"
     },
     {
         "id": 5,
-        "pornire": "sebes",
-        "destinatie": "bucuresti",
-        "marfa": "parchet"
-    }    
-    ]
+        "startcity": "cluj-napoca",
+        "address": "alba-iulia",
+        "endcity": "mobila",
+        "delivery":"muie",
+        "marfa": "marfa",
+        "driverId":"muie",
+        "dateTime":"muie"
+
+ 
+    }
+]

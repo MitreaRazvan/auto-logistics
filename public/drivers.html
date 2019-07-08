@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
 
+<html>
+    
 <head>
     <title>webLogistics</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
@@ -9,6 +9,10 @@
 <body>
     <header>
         <h1>AutoLogistics</h1>
+        <form action="" style="text-align:center">
+            <input id="search" type="search" placeholder="Search">
+            <label for="search">&#128270;</label>
+        </form>
         <h2 class="logo"></h2>
         <ul class="first-button"> comenzi marfa
             <li id="1"><a href="#" data-page="ofer-marfa">ofer-marfa</a></li>
@@ -39,9 +43,11 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="driver" placeholder="driver" required></td>
+                        <td><input type="text" name="carNumber" placeholder="car number" required></td>
+                        <td><input type="text" name="phone" placeholder="Phone" required></td>
+                        <td><input type="text" name="date/Time" placeholder="date/time" required></td>
+                        <td><button type="submit" onclick="savePerson()">Save</button></td>
                     </tr>
                 </tfoot>
             </table>
