@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Log In</title>
+		<link rel="stylesheet" href="stylesheets/login.css" type="text/css">
+	</head>
+	<body style="background: url(1.jpg) no-repeat; background-size: cover">
+		<div class="container">
+			<div class="login">
+				<h1>Take your first Order</h1>
+				<form  id="lgForm" method="post" action="" onsubmit="return false">
+					<p><input type="text" placeholder="email" required="required" name="lgMail" tabindex="1"></p>
+					<p><input type="text" placeholder="Phone" required="required" name="lgPhone" tabindex="2"></p>
+					<p><input type="text" placeholder="carNumber" required="required" name="lgCar" tabindex="3"></p>
+					<p class="remember">
+					</p>
+					<p  id="button"class="sumbit"><input type="submit" name="commit" onclick="clickLogin()" value="login"></p>
+				</form>
+			</div>
+		</div>
+		<script src="javascripts/availableorders.js"></script>
+	</body>
+</html>

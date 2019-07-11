@@ -1,40 +1,66 @@
 body {
+  margin: 0 auto;
   padding: 60px;
+  padding-top: 0;
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #e3e0cf;
+  background: #EFEFBB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#logo{
+  height: 260px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.first-button{
+  float: left;
+}
+
+header p{
+margin-bottom: 25px;
+}
+
+.take{
+  color: #C60021;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 25px;
 }
 
 h1 {
   text-align: center;
+ padding-top: 0px; 
 }
 
 header ul{
   text-align: center;
 }
 
-.first-button {  
-display: inline-block;
-text-align: center;
-}
 
 table{
   width: 100%;
 }
 
 thead{
-  background-color: #957DAD;
+  background-color: #6688CC;
   color: white;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
 
 }
+
 
 thead:hover{
   color: black;
 }
 
 .tbody td{
-  padding: 10px;
+  padding: 5px;
   display: inline-block;
 }
 
@@ -43,3 +69,11 @@ thead:hover{
   display: inline-block;
   width: 100%;
 }
+
+label img{
+  padding: 0;
+  margin: 0;
+  width: 28px;
+}
+
+

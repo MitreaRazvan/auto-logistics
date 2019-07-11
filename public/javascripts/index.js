@@ -1,41 +1,40 @@
-var allCurse;
+var allorders;
 var allDrivers;
-var editCurseId;
+var editordersId;
 
 var API_URL = {
-  CREATE: 'users',
-  READ: 'users', //data/curse.json
-  READ_DRIVERS: 'drivers', //data/curse.json
-  ADD: 'users/add',
-  UPDATE:'users/update',
-  DELETE:'users/delete'
+  CREATE: 'orders',
+  READ: 'orders', //data/orders.json
+  READ_DRIVERS: 'drivers', //data/orders.json
+  ADD: 'orders/add',
+  UPDATE: 'orders/update',
+  DELETE: 'orders/delete'
 };
 
 
 var API_METHOD = {
-  CREATE:'POST',
-    READ:'GET',
-    ADD:'POST',
-    //ADD: 'GET',
-    UPDATE:'PUT',
-    DELETE:'DELETE'
+  CREATE: 'POST',
+  READ: 'GET',
+  ADD: 'POST',
+  //ADD: 'GET',
+  UPDATE: 'PUT',
+  DELETE: 'DELETE'
 }
 
-if (document.querySelector("#curse")) {
-  fetch(API_URL.READ).then(function(r){
+if (document.querySelector("#orders")) {
+  fetch(API_URL.READ).then(function (r) {
     return r.json()
-  }).then(function(curse){
-      console.log('curse', curse);
-      allCurse = curse;
-      display(curse);
-      //TODO - parcurgem lista de curse si generam cate un rand in tabel 
+  }).then(function (orders) {
+    console.log('orders', orders);
+    allorders = orders;
+    display(orders);
   })
 }
 
-function display(curse) {
-    console.warn(curse);
-    var list = curse.map(function (info) {
-        return `<tr data-id="${info.id}">
+function display(orders) {
+  console.warn(orders);
+  var list = orders.map(function (info) {
+    return `<tr data-id="${info.id}">
         <td>${info.startcity}</td>
         <td>${info.address}</td>
         <td>${info.endcity}</td>
@@ -43,55 +42,57 @@ function display(curse) {
         <td>${info.marfa}</td>
         <td>${info.driverId}</td>
         <td>${info.dateTime}</td>
+        <td>
+        <a href="#" class="take">&#10003</a>
+        <td>
       </tr>`
-    });
-    document.querySelector("#curse tbody").innerHTML = list.join('');
+  });
+  document.querySelector("#orders tbody").innerHTML = list.join('');
 }
 
 
-if(document.querySelector("#drivers")) {
-  fetch(API_URL.READ_DRIVERS).then(function(r){
+if (document.querySelector("#drivers")) {
+  fetch(API_URL.READ_DRIVERS).then(function (r) {
     return r.json()
-  }).then(function(response){
+  }).then(function (response) {
     drivers.display(response);
-  })  
+  })
 }
 
 const drivers = {
-  display: function(drivers){
-      var list = drivers.map(function(data){
-        return `<tr data-id="${data.id}">
+  display: function (drivers) {
+    var list = drivers.map(function (data) {
+      return `<tr data-id="${data.id}">
             <td>${data.driver}</td>
             <td>${data.carNumber}</td>
             <td>${data.phone}</td>
             <td>${data.dateTime}</td>
-            <td>${data.actions}</td>
           </tr>`;
-      });
-      
-      document.querySelector("#drivers tbody").innerHTML = list.join('');  
-    }
-  }
-  
-  function saveCurse(){
-    var startcity = document.querySelector('[name=startcity]').value;
-    var address = document.querySelector('[name=address]').value;
-    var endcity = document.querySelector('[name=endcity]').value;
-    var delivery = document.querySelector('[name=delivery]').value;
-    var marfa = document.querySelector('[name=marfa]').value;
-    var driverId = document.querySelector('[name=driverId]').value;
-    var dateTime = document.querySelector('[name=dateTime]').value;
-    
-  if (submitNewCurse){
-    submitNewCurse(startcity,address, endcity, delivery, marfa, driverId, dateTime);
+    });
+
+    document.querySelector("#drivers tbody").innerHTML = list.join('');
   }
 }
 
-function submitNewCurse(startcity,address, endcity, delivery, marfa, driverId, dateTime){
-  console.warn('submitNewCurse', startcity,address, endcity, delivery, marfa, driverId, dateTime);
+function saveorders() {
+  var startcity = document.querySelector('[name=startcity]').value;
+  var address = document.querySelector('[name=address]').value;
+  var endcity = document.querySelector('[name=endcity]').value;
+  var delivery = document.querySelector('[name=delivery]').value;
+  var marfa = document.querySelector('[name=marfa]').value;
+  var driverId = document.querySelector('[name=driverId]').value;
+  var dateTime = document.querySelector('[name=dateTime]').value;
+
+  if (submitNeworders) {
+    submitNeworders(startcity, address, endcity, delivery, marfa, driverId, dateTime);
+  }
+}
+
+function submitNeworders(startcity, address, endcity, delivery, marfa, driverId, dateTime) {
+  console.warn('submitNeworders', startcity, address, endcity, delivery, marfa, driverId, dateTime);
   var body = null;
   const method = API_METHOD.ADD;
-  if(method === 'POST'){
+  if (method === 'POST') {
     body = JSON.stringify({
       startcity: startcity,
       address: address,
@@ -108,27 +109,27 @@ function submitNewCurse(startcity,address, endcity, delivery, marfa, driverId, d
     headers: {
       "Content-Type": "application/json"
     }
-  }).then(function(r){
+  }).then(function (r) {
     return r.json();
-  }).then(function(status){
-    if (status.succes){
+  }).then(function (status) {
+    if (status.succes) {
       console.warn('saved!', status);
-      inlineAddPerson(startcity,address, endcity, delivery, marfa, driverId, dateTime);
+      inlineAddPerson(startcity, address, endcity, delivery, marfa, driverId, dateTime);
     } else {
       console.warn('not saved!', status);
     }
   })
 }
 
-function inlineAddPerson(startcity,address, endcity, delivery, marfa, driverId, dateTime){
-  allCurse.push({
-      startcity: startcity,
-      address: address,
-      endcity: endcity,
-      delivery: delivery,
-      marfa: marfa,
-      driverId: driverId,
-      dateTime: dateTime
+function inlineAddPerson(startcity, address, endcity, delivery, marfa, driverId, dateTime) {
+  allorders.push({
+    startcity: startcity,
+    address: address,
+    endcity: endcity,
+    delivery: delivery,
+    marfa: marfa,
+    driverId: driverId,
+    dateTime: dateTime
   });
-  display(allCurse);
+  display(allorders);
 }
