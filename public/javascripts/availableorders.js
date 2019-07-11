@@ -50,8 +50,10 @@ var lgMail = document.querySelector("[name=lgMail]").value;
 var lgCar = document.querySelector("[name=lgCar]").value;
 var lgPhone = document.querySelector("[name=lgPhone]").value;
 window.location = 'availableorders.html';
-//console.warn("Login input: ", lgMail + " " + lgCar + " " + lgPhone);
+console.warn("Login input: ", lgMail + " " + lgCar + " " + lgPhone);
+
 submitLogin(lgMail, lgCar, lgPhone);
+};
 
 function submitLogin(lgMail, lgCar, lgPhone){
     var body = JSON.stringify({lgMail, lgCar, lgPhone});
