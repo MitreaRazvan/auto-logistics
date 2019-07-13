@@ -39,21 +39,35 @@ function display(orders) {
 document.querySelector("#orders tbody").innerHTML = list.join('');
 }
 
+//function highlight(ctrl){
+    //var elements=document.getElementsByTagName('td a'); 
+    //for(var i=0;i<elements.length;i++)
+         //elements[i].className=''; 
+    //var parent=ctrl.parentNode.parentNode;
+    //parent.className="take"; 
+ 
+ //}
+
 function highlight(ctrl){
     var parent=ctrl.parentNode.parentNode;
     parent.style.background='#DDA0DD';
 }
+
 
 function clickLogin(){
 console.warn("clicked on login", this);	
 var lgMail = document.querySelector("[name=lgMail]").value;
 var lgCar = document.querySelector("[name=lgCar]").value;
 var lgPhone = document.querySelector("[name=lgPhone]").value;
+if(lgMail==''){
+    alert('required');
+    return false;
+}    
 window.location = 'availableorders.html';
-console.warn("Login input: ", lgMail + " " + lgCar + " " + lgPhone);
-
+alert("login successfully!");
 submitLogin(lgMail, lgCar, lgPhone);
-};
+
+};  
 
 function submitLogin(lgMail, lgCar, lgPhone){
     var body = JSON.stringify({lgMail, lgCar, lgPhone});
