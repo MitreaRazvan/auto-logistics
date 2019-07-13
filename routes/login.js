@@ -9,16 +9,21 @@ var pool = mysql.createPool({
   database: 'logistics'
 });
 
- // GET /READ entire "spots" listed.  http://localhost:3000/get
-router.get('/', function(req, res, next) {
-  //  res.send('respond with a resource');
+router.post('/', function(req, res, next){
+  const email = req.body.email;
+  const phone = req.body.phone;
+  const car = req.body.car;
+
   pool.getConnection((err, connection) => {
-    const sql = `SELECT * FROM orders WHERE driverId is null`;
-     connection.query(sql, (err, results) => {
-        res.json(results);
-        connection.release();
+    const sql = `SELECT * FROM drivers WHERE phone="${phone}" AND driver="${email}" AND carNumber="${car}"`;
+     
+    console.log(sql)
+    connection.query(sql, (err, results) => {
+      res.json(results);
+      connection.release();
     });
   });
 });
+
 
  module.exports = router;

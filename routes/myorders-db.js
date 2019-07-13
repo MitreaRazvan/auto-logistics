@@ -13,7 +13,7 @@ var pool = mysql.createPool({
 
 router.get('/', function(req, res, next) {
   pool.getConnection((err, connection) => {
-    const sql = `SELECT * FROM orders`;
+    const sql = `SELECT * FROM myorders`;
       connection.query(sql, (err, results) => {
         res.json(results);
         connection.release();
@@ -21,12 +21,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/available', function(req, res, next) {
-  const userId = req.body.userId;
+router.get('/accept-order', function(req, res, next) {
   pool.getConnection((err, connection) => {
-    const sql = `SELECT * FROM orders WHERE (driverId is null OR (driverId = ${userId} AND dateTime = 0))`;
+    const sql = `INSERT INTO myorders`;
       connection.query(sql, (err, results) => {
-        res.json(results);
+        res.redirect('/myorders');
         connection.release();
     });
   });
