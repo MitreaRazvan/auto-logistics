@@ -1,4 +1,4 @@
-var allorders;
+var allOrders;
 var allDrivers;
 var editordersId;
 
@@ -26,7 +26,7 @@ if (document.querySelector("#orders")) {
     return r.json()
   }).then(function (orders) {
     console.log('orders', orders);
-    allorders = orders;
+    allOrders = orders;
     display(orders);
   })
 }
@@ -39,7 +39,7 @@ function display(orders) {
         <td>${info.address}</td>
         <td>${info.endcity}</td>
         <td>${info.delivery}</td>
-        <td>${info.marfa}</td>
+        <td>${info.items}</td>
         <td>${info.driverId}</td>
         <td>${info.dateTime}</td>
         <td>
@@ -74,33 +74,31 @@ const drivers = {
   }
 }
 
-function saveorders() {
+function saveOrders() {
   var startcity = document.querySelector('[name=startcity]').value;
   var address = document.querySelector('[name=address]').value;
   var endcity = document.querySelector('[name=endcity]').value;
   var delivery = document.querySelector('[name=delivery]').value;
-  var marfa = document.querySelector('[name=marfa]').value;
+  var items = document.querySelector('[name=items]').value;
   var driverId = document.querySelector('[name=driverId]').value;
   var dateTime = document.querySelector('[name=dateTime]').value;
-
-  if (submitNeworders) {
-    submitNeworders(startcity, address, endcity, delivery, marfa, driverId, dateTime);
+  console.log(saveOrders);
+  if (submitNewOrders) {
+    submitNewOrders(startcity, address, endcity, delivery, items, driverId, dateTime);
   }
 }
-
-function submitNeworders(startcity, address, endcity, delivery, marfa, driverId, dateTime) {
-  console.warn('submitNeworders', startcity, address, endcity, delivery, marfa, driverId, dateTime);
+function submitNewOrders(startcity, address, endcity, delivery, items, driverId, dateTime) {
   var body = null;
   const method = API_METHOD.ADD;
   if (method === 'POST') {
     body = JSON.stringify({
-      startcity: startcity,
-      address: address,
-      endcity: endcity,
-      delivery: delivery,
-      marfa: marfa,
-      driverId: driverId,
-      dateTime: dateTime
+      startcity,
+      address,
+      endcity,
+      delivery,
+      items,
+      driverId,
+      dateTime
     });
   }
   fetch(API_URL.ADD, {
@@ -112,24 +110,24 @@ function submitNeworders(startcity, address, endcity, delivery, marfa, driverId,
   }).then(function (r) {
     return r.json();
   }).then(function (status) {
-    if (status.succes) {
+    if (status.success) {
       console.warn('saved!', status);
-      inlineAddPerson(startcity, address, endcity, delivery, marfa, driverId, dateTime);
+      inlineAddOrders(startcity, address, endcity, delivery, items, driverId, dateTime);
     } else {
       console.warn('not saved!', status);
     }
-  })
+  });
 }
 
-function inlineAddPerson(startcity, address, endcity, delivery, marfa, driverId, dateTime) {
-  allorders.push({
-    startcity: startcity,
-    address: address,
-    endcity: endcity,
-    delivery: delivery,
-    marfa: marfa,
-    driverId: driverId,
-    dateTime: dateTime
+function inlineAddOrders(startcity, address, endcity, delivery, items, driverId, dateTime) {
+  allOrders.push({
+    startcity,
+    address,
+    endcity,
+    delivery,
+    items,
+    driverId,
+    dateTime
   });
-  display(allorders);
+  display(allOrders);
 }

@@ -6,8 +6,9 @@ body {
   background: #EFEFBB;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
+
+
 
 #logo{
   height: 260px;
@@ -45,6 +46,7 @@ header ul{
 
 table{
   width: 100%;
+  
 }
 
 thead{
@@ -57,7 +59,16 @@ thead{
 
 
 thead:hover{
-  color: black;
+  background-color: #779ecb;
+  font-weight: bold;
+  
+  box-shadow: rgb(67, 168, 182) -1px 1px, rgb(84, 155, 173) -2px 2px, rgb(88, 165, 189) -3px 3px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
 }
 
 .tbody td{

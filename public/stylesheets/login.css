@@ -85,6 +85,7 @@ body {
   }
   
   input[type=submit] {
+	transition: .10s;
 	padding: 0 18px;
 	height: 29px;
 	font-size: 12px;

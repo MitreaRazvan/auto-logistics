@@ -15,7 +15,7 @@ router.post('/', function(req, res, next){
   const car = req.body.car;
 
   pool.getConnection((err, connection) => {
-    const sql = `SELECT * FROM drivers WHERE phone="${phone}" AND driver="${email}" AND carNumber="${car}"`;
+    const sql = `SELECT * FROM drivers WHERE phone="${phone}" AND email="${email}" AND carNumber="${car}"`;
      
     console.log(sql)
     connection.query(sql, (err, results) => {

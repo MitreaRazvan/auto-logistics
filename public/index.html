@@ -13,13 +13,13 @@
             <label for="search">&#128270;</label>
         </form>
         <h2 class="logo"></h2>
-        <ul class="first-button"> comenzi marfa
-            <li id="1"><a href="#" data-page="ofer-marfa">ofer-marfa</a></li>
+        <ul class="first-button"> comenzi items
+            <li id="1"><a href="#" data-page="ofer-items">ofer-items</a></li>
             <li id="2"><a href="#" data-page="ofer-transport">ofer-transport</a></li>
         </ul>
         <ul class="first-button"> Dispecer Transport
             <li id="1"><a href="#" data-page="caut-transport">dispecer-transport</a></li>
-            <li id="2"><a href="#" data-page="ofer-transport">dispecer-marfa</a></li>   
+            <li id="2"><a href="#" data-page="ofer-transport">dispecer-items</a></li>   
         </ul>
 
     </header>
@@ -33,9 +33,9 @@
                     <th>address</th>
                     <th>endcity</th>
                     <th>delivery</th>
-                    <th>marfa</th>
-                    <th>driver_id</th>
-                    <th>date/time</th>
+                    <th>items</th>
+                    <th>driverId</th>
+                    <th>dateTime</th>
                     <th>actions</th>
                 </tr>
                 </thead>
@@ -48,10 +48,10 @@
                         <td><input type="text" name="address" placeholder="address" required></td>
                         <td><input type="text" name="endcity" placeholder="end city" required></td>
                         <td><input type="text" name="delivery" placeholder="delivery" required></td>
-                        <td><input type="text" name="marfa" placeholder="marfa" required></td>
+                        <td><input type="text" name="items" placeholder="items" required></td>
                         <td><input type="text" name="driverId" placeholder="driver name" required></td>
                         <td><input type="text" name="dateTime" placeholder="date/time" required></td>
-                        <td><button type="submit" onclick="saveCurse()">Save</button></td>
+                        <td><button type="submit" onclick="saveOrders()">Save</button></td>
                     </tr>
                 </tfoot>
             </table>

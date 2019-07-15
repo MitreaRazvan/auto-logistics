@@ -57,7 +57,7 @@ function display(orders) {
         <td>${info.address}</td>
         <td>${info.endcity}</td>
         <td>${info.delivery}</td>
-        <td>${info.marfa}</td>
+        <td>${info.items}</td>
         <td>${info.dateTime}</td>
         <td>
             <a href="#" onclick='highlight(this)' class="take">&#10003</a>
