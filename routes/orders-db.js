@@ -21,10 +21,36 @@ router.get('/', function (req, res, next) {
   });
 });
 
+//driverId = 
+
 router.post('/available', function (req, res, next) {
   const userId = req.body.userId;
   pool.getConnection((err, connection) => {
     const sql = `SELECT * FROM orders WHERE (driverId is null OR (driverId = ${userId} AND dateTime = 0))`;
+    connection.query(sql, (err, results) => {
+      res.json(results);
+      connection.release();
+    });
+  });
+});
+
+router.put('/take', function (req, res, next) {
+  const userId = req.body.userId;
+  const orderId = req.body.orderId;
+  pool.getConnection((err, connection) => {
+    const sql = `UPDATE orders SET driverId = ${userId} WHERE id = ${orderId}`;
+    connection.query(sql, (err, results) => {
+      res.json(results);
+      connection.release();
+    });
+  });
+});
+
+router.put('/finish', function (req, res, next) {
+  const userId = req.body.userId;
+  const orderId = req.body.orderId;
+  pool.getConnection((err, connection) => {
+    const sql = `UPDATE orders SET dateTime = CURRENT_TIMESTAMP WHERE id = ${orderId} AND driverId = ${userId}` ;
     connection.query(sql, (err, results) => {
       res.json(results);
       connection.release();

@@ -3,12 +3,16 @@ var allorders;
 var API_URL = {
     READ: 'orders/available',
     LOGIN: 'login',
+    TAKE: 'orders/take',
+    FINISH:'orders/finish',
     UPDATE: 'orders/update'
 };
 
 var API_METHOD = {
     READ: 'POST',
     LOGIN:'POST',
+    TAKE: 'PUT',
+    FINISH:'PUT',
     UPDATE: 'PUT'
 }
 
@@ -60,20 +64,70 @@ function display(orders) {
         <td>${info.items}</td>
         <td>${info.dateTime}</td>
         <td>
-            <a href="#" onclick='highlight(this)' class="take">&#10003</a>
+        <a href="#" onclick='takeOrder(this)' class="take">&#x1F69A</a>
+        <a herf="#" onclick='finishOrder(this)' class="take1">&#x274C</a>
+
         <td>
       </tr>`
     });    
-document.querySelector("#orders tbody").innerHTML = list.join('');
+    document.querySelector("#orders tbody").innerHTML = list.join('');
 }
 
-function highlight(ctrl){
-    //TODO - if parent background is highlighted - turn background to transparent/white
-    // else - highlight row
-    var parent=ctrl.parentNode.parentNode;
-    parent.style.background='#DDA0DD';
-    //window.location = 'myorders.html';
-}
+function finishOrder(link){
+    var userId = getUser().id;
+    var tr = link.parentNode.parentNode;
+    var orderId = tr.getAttribute('data-id');
+    console.warn(orderId, userId);
+    let body = null;
+    const method = API_METHOD.FINISH;
+    if(method === "PUT"){
+        body = JSON.stringify({orderId, userId});
+        console.log('userId', userId);  
+    };
+
+    fetch(API_URL.FINISH, {
+        method,
+        body,
+        headers: {"Content-Type": "application/json"}
+    }).then(function (r) {
+        return r.json();
+    }).then(function (status) {
+        loadOrders();
+    });
+};
+
+
+function submitOrder(orderId) {
+    var userId = getUser().id;
+    console.warn(orderId, userId);
+    let body = null;
+    const method = API_METHOD.TAKE;
+    if(method === "PUT"){
+        body = JSON.stringify({orderId, userId});
+        console.log('userId', userId);  
+    };
+
+    fetch(API_URL.TAKE, {
+        method,
+        body,
+        headers: {"Content-Type": "application/json"}
+    }).then(function (r) {
+        return r.json();
+    }).then(function (status) {
+        loadOrders();
+    });
+};
+
+function takeOrder(link) {
+    var tr = link.parentNode.parentNode;
+    var id = tr.getAttribute('data-id');
+    if(function finishOrder(){
+        var id = tr.getAttribute('data-id'); 
+        console.log(finishOrder);
+        finishOrder(id);
+    })
+    submitOrder(id);
+};
 
 
 function clickLogin(){
@@ -114,3 +168,5 @@ function submitLogin(email, car, phone){
         }
     })
 }
+
+
