@@ -10,7 +10,7 @@ var API_URL = {
 };
 
 if (location.host === "mitrearazvan.github.io") {
-    API_URL.READ = 'data/curse.json';
+    API_URL.READ = 'data/orders.json';
  }
 
 var API_METHOD = {
