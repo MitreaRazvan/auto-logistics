@@ -2,7 +2,7 @@ var allorders;
 
 var API_URL = {
     READ: 'orders/available',
-    READ: 'curse',
+    READ: 'orders.json',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
