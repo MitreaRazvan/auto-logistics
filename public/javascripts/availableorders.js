@@ -2,13 +2,14 @@ var allorders;
 
 var API_URL = {
     READ: 'orders/available',
+    READ: 'data/curse',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
     UPDATE: 'orders/update'
 };
 
-if (locationhost === "mitrearazvan.github.io") {
+if (locationnhost === "mitrearazvan.github.io") {
     API_URL.READ = 'data/curse.json';
  }
 
