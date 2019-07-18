@@ -8,7 +8,7 @@ Weblogistics works through a simple idea :
 the registered persons can add the location from which the goods can be picked up and at the same time the registered drivers can take over the cargo to transport it to the desired location.
 
 ## Live Preview
-..
+Open [login.html](https://github.com/MitreaRazvan/web-logistics/blob/master/public/login.html);
 
 ## Features
 

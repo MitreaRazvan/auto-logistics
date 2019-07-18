@@ -8,6 +8,10 @@ var API_URL = {
     UPDATE: 'orders/update'
 };
 
+if (location.host === "mitrearazvan.github.io") {
+    API_URL.READ = 'data/curse.json';
+ }
+
 var API_METHOD = {
     READ: 'POST',
     LOGIN:'POST',
