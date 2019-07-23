@@ -2,16 +2,12 @@ var allorders;
 
 var API_URL = {
     READ: 'orders/available',
-    READ: 'data/orders.json',
+    READ: 'data/orders',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
     UPDATE: 'orders/update'
 };
-
-if (location.host === "mitrearazvan.github.io") {
-    API_URL.READ = 'data/orders.json';
- }
 
 var API_METHOD = {
     READ: 'POST',
@@ -19,6 +15,10 @@ var API_METHOD = {
     TAKE: 'PUT',
     FINISH:'PUT',
     UPDATE: 'PUT'
+}
+
+if (true || location.host === "MitreaRazvan.github.io") {
+    API_URL.READ = 'data/orders.json';
 }
 
 function getUser() {
