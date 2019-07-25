@@ -14,10 +14,10 @@ var API_METHOD = {
     TAKE: 'PUT',
     FINISH:'PUT',
     UPDATE: 'PUT'
-}
+};
 
 if (true || location.host === "mitrearazvan.github.io") {
-    API_URL.READ = 'data/orders.json';
+    API_URL.READ = '.../public/data/orders.json';
 }
 
 function getUser() {
