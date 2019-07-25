@@ -17,7 +17,7 @@ var API_METHOD = {
 };
 
 if (true || location.host === "mitrearazvan.github.io") {
-    API_URL.READ = '.../public/data/orders.json';
+    API_URL.READ = '../public/data/orders.json';
 }
 
 function getUser() {
