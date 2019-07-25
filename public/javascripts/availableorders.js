@@ -2,7 +2,6 @@ var allorders;
 
 var API_URL = {
     READ: 'orders/available',
-    READ: 'data/orders',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
@@ -17,7 +16,7 @@ var API_METHOD = {
     UPDATE: 'PUT'
 }
 
-if (true || location.host === "MitreaRazvan.github.io") {
+if (true || location.host === "mitrearazvan.github.io") {
     API_URL.READ = 'data/orders.json';
 }
 
