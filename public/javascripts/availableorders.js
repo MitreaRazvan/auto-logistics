@@ -1,7 +1,10 @@
+
 var allorders;
+var alldrivers = [];
 
 var API_URL = {
     READ: 'orders/available',
+    READ: 'data/orders.json',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
@@ -11,13 +14,18 @@ var API_URL = {
 var API_METHOD = {
     READ: 'POST',
     LOGIN:'POST',
+    LOGIN: 'GET',
     TAKE: 'PUT',
     FINISH:'PUT',
     UPDATE: 'PUT'
 };
 
-if (true || location.host === "mitrearazvan.github.io") {
+if (location.host === "mitrearazvan.github.io") {
     API_URL.READ = '../public/data/orders.json';
+	API_URL.LOGIN = 'data/login.json'; // trebuie sa mearga si formatul asta
+	
+	API_METHOD.READ = 'GET';
+	API_METHOD.LOGIN = 'GET';
 }
 
 function getUser() {
@@ -146,9 +154,9 @@ function clickLogin(){
     submitLogin(lgMail, lgCar, lgPhone);
 };  
 
+        
 function submitLogin(email, car, phone){
-    console.warn("Submit Login got data: ", phone + " " + email + " " + car);
-    
+    console.warn("Submit Login got data: ", phone + " " + email + " " + car);   
     let body = null;
     const method = API_METHOD.LOGIN;
     if(method === "POST"){
@@ -172,5 +180,4 @@ function submitLogin(email, car, phone){
         }
     })
 }
-
 

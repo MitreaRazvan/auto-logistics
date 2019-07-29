@@ -9,6 +9,10 @@ var pool = mysql.createPool({
   database: 'logistics'
 });
 
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
 router.post('/', function(req, res, next){
   const email = req.body.email;
   const phone = req.body.phone;
