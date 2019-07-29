@@ -20,13 +20,17 @@ var API_METHOD = {
     UPDATE: 'PUT'
 };
 
+function loadOrders() {
+    const user = getUser();
+    const userId = user.id;
 if (location.host === "mitrearazvan.github.io") {
     API_URL.READ = '../public/data/orders.json';
 	API_URL.LOGIN = 'data/login.json'; // trebuie sa mearga si formatul asta
 	
 	API_METHOD.READ = 'GET';
-	API_METHOD.LOGIN = 'GET';
+    API_METHOD.LOGIN = 'GET';
 }
+
 
 function getUser() {
     return JSON.parse(localStorage.getItem('user'));
