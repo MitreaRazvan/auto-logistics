@@ -1,4 +1,3 @@
-
 var allorders;
 var alldrivers = [];
 
@@ -19,6 +18,14 @@ var API_METHOD = {
     FINISH:'PUT',
     UPDATE: 'PUT'
 };
+
+function getUser(){
+    return JSON.parse(localStorage.getItem('id'));
+}
+function loadOrders() {
+    const user = getUser();
+    const userId = user.id;
+}
 
 if (location.host === "mitrearazvan.github.io") {
     API_URL.READ = '../public/data/orders.json';
