@@ -4,7 +4,7 @@ var alldrivers = [];
 
 var API_URL = {
     READ: 'orders/available',
-    READ: 'data/orders.json',
+    //READ: 'data/orders.json',
     LOGIN: 'login',
     TAKE: 'orders/take',
     FINISH:'orders/finish',
@@ -14,7 +14,7 @@ var API_URL = {
 var API_METHOD = {
     READ: 'POST',
     LOGIN:'POST',
-    LOGIN: 'GET',
+    //LOGIN: 'GET',
     TAKE: 'PUT',
     FINISH:'PUT',
     UPDATE: 'PUT'
