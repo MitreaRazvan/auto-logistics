@@ -74,7 +74,7 @@ function display(orders) {
     console.warn(orders);
     const userId = getUser().id;
     var list = orders.map(function (info) {
-        var style = info.driverId == userId ? 'style="background: #DDA0DD"' : '';
+        var style = info.driverId == userId ? 'style="background: #dea6af"' : '';
         return `<tr data-id="${info.id}" ${style}>
         <td>${info.startcity}</td>
         <td>${info.address}</td>
@@ -85,7 +85,6 @@ function display(orders) {
         <td>
         <a href="#" onclick='takeOrder(this)' class="take">&#x1F69A</a>
         <a herf="#" onclick='finishOrder(this)' class="take1">&#x274C</a>
-
         <td>
       </tr>`
     });    
@@ -186,4 +185,11 @@ function submitLogin(email, car, phone){
             localStorage.clear();
         }
     });
+};
+
+function LogOut(){
+    window.location = 'login.html';
+    if(localStorage.clear()){
+        alert('required');
+}
 };
