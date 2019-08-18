@@ -21,4 +21,26 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post('/add', function (req, res, next) {
+  const email = req.body.email;
+  const driver = req.body.driver;
+  const carNumber = req.body.carNumber;
+  const phone = req.body.phone;
+  const dateTime = req.body.dateTime;
+  pool.getConnection((err, connection) => {
+    console.log(err);
+    const sql = `INSERT INTO drivers (email, driver, carNumber, phone, dateTime) VALUES ?`;
+    const values = [
+      [email, driver, carNumber, phone, dateTime]
+    ];
+    connection.query(sql, [values], (err, results) => {
+      console.log(err);
+      console.log(sql);
+      res.json(results);
+      connection.release();
+    });
+  });
+});
+
+
 module.exports = router;

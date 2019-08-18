@@ -7,6 +7,7 @@ var API_URL = {
   READ: 'orders', //data/orders.json
   READ_DRIVERS: 'drivers', //data/orders.json
   ADD: 'orders/add',
+  ADD: 'drivers/add',
   UPDATE: 'orders/update',
   DELETE: 'orders/delete'
 };
@@ -42,9 +43,6 @@ function display(orders) {
         <td>${info.items}</td>
         <td>${info.driverId}</td>
         <td>${info.dateTime}</td>
-        <td>
-        <a href="#" class="take">&#10003</a>
-        <td>
       </tr>`
   });
   document.querySelector("#orders tbody").innerHTML = list.join('');
@@ -63,6 +61,7 @@ const drivers = {
   display: function (drivers) {
     var list = drivers.map(function (data) {
       return `<tr data-id="${data.id}">
+            <td>${data.email}</td>
             <td>${data.driver}</td>
             <td>${data.carNumber}</td>
             <td>${data.phone}</td>
@@ -131,3 +130,43 @@ function inlineAddOrders(startcity, address, endcity, delivery, items, driverId,
   });
   display(allOrders);
 }
+
+function saveDrivers() {
+  var email = document.querySelector('[name=email]').value;
+  var driver = document.querySelector('[name=driver]').value;
+  var carNumber = document.querySelector('[name=carNumber]').value;
+  var phone = document.querySelector('[name=phone]').value;
+  var dateTime = document.querySelector('[name=dateTime]').value;
+  console.log(saveDrivers);
+  if (submitNewDrivers) {
+    submitNewDrivers(email, driver, carNumber, phone, dateTime);
+  }
+}
+
+function submitNewDrivers(email, driver, carNumber, phone, dateTime) {
+  var body = null;
+  const method = API_METHOD.ADD;
+  if (method === 'POST') {
+    body = JSON.stringify({ email, driver, carNumber, phone, dateTime });
+  }
+  fetch(API_URL.ADD, {
+    method,
+    body,
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).then(function (r) {
+    return r.json();
+  }).then(function (status) {
+    if (status.success) {
+      console.warn('saved!', status);
+      inlineAddDrivers(email, driver, carNumber, dateTime);
+    } else {
+      console.warn('not saved!', status);
+    }
+  });
+  function inlineAddDrivers(email, driver, carNumber, dateTime) {
+    allDrivers.push({ email, driver, carNumber, dateTime });
+    display(allDrivers);
+  }
+};

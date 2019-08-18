@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var ordersRouter = require('./routes/orders-db');
 var driversRouter = require('./routes/drivers-db');
 var loginRouter = require('./routes/login');
-var myOrdersRouter = require('./routes/myorders-db');
+var addOrdersRouter = require('./routes/addOrders-db');
 
 var app = express();
 
@@ -26,8 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/orders', ordersRouter);
 app.use('/drivers', driversRouter);
-app.use('/login', loginRouter);
-app.use('/myorders', myOrdersRouter);
+app.use('/login', loginRouter); 
+app.use('/addOrders', addOrdersRouter);
+
+
+
 
 
 // catch 404 and forward to error handler

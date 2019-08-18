@@ -1,0 +1,57 @@
+body {
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+  }
+
+  #text{
+    font-size: 20px;
+    float: right;
+  }
+  #logo{
+    height: 250px;
+    width: 250px;
+    display: block;
+    margin-right: auto;
+  }
+
+  header p{
+    margin-bottom: 25px;
+    }
+    
+    .row {
+      font-size: 15px;
+      padding-bottom: 5px;
+      line-height: 1em;
+      text-align: center;
+    
+    }
+    
+    table {
+    width: 10px;
+    padding-top: auto;
+    padding-right: auto;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    }
+    
+    .row th{
+        padding-top: 12px;
+      text-align: center;
+    }
+    
+    thead{
+      background-color: #6688CC;
+      color: white;
+      padding-right: 5px;
+    
+    }
+
+    .tbody td{
+        padding: 5px;
+        display: inline-block;
+      }
+      

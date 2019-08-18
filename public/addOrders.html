@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Your Order</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <header>
+        <h1></h1><img src="6.png" id="logo">
+        <button onclick="LogOut()">LogOut</button>
+        <button onclick="DriverOrders()">Driver Orders</button>
+    </header>
+    <main>
+        <section>
+            <table id="orders" class="container">
+                <thead>
+                    <tr class="row">
+                        <th>Startcity</th>
+                        <th>Address</th>
+                        <th>Endcity</th>
+                        <th>Delivery</th>
+                        <th>Items</th>
+                        <th>Commands</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td><input name="startcity" placeholder="start city" required></td>
+                        <td><input name="address" placeholder="address" required></td>
+                        <td><input name="endcity" placeholder="end city" required></td>
+                        <td><input name="delivery" placeholder="delivery" required></td>
+                        <td><input name="items" placeholder="items" required></td>
+                        <td><button type="submit" onclick="addOrders()">addOrder</button></td>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+    <script src="javascripts/addOrders.js">
+
+    </script>
+</body>
+
+</html>

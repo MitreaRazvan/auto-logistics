@@ -1,53 +1,35 @@
-
 <html>
-    
+
 <head>
     <title>webLogistics</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/database.css" />
 </head>
 
 <body>
     <header>
-        <h1>AutoLogistics</h1>
-        <form action="" style="text-align:center">
-            <input id="search" type="search" placeholder="Search">
-            <label for="search">&#128270;</label>
-        </form>
-        <h2 class="logo"></h2>
-        <ul class="first-button"> comenzi items
-            <li id="1"><a href="#" data-page="ofer-items">ofer-items</a></li>
-            <li id="2"><a href="#" data-page="ofer-transport">ofer-transport</a></li>
-        </ul>
-        <ul class="first-button"> Dispecer Transport
-            <li id="1"><a href="#" data-page="caut-transport">dispecer-transport</a></li>
-            <li id="2"><a href="#" data-page="ofer-transport">dispecer-items</a></li>
-        </ul>
-
+        <img src="6.png" id="logo">
     </header>
     <main>
-        <aside></aside>
         <section>
-            <table id="drivers">
+            <table style="width: 100px" id="drivers" class="container">
                 <thead>
                     <tr class="row">
-                        <th>driver</th>
-                        <th>car number</th>
-                        <th>phone</th>
-                        <th>date/Time</th>
+                        <th>Email</th>
+                        <th>Driver</th>
+                        <th>Car Number</th>
+                        <th>Phone</th>
+                        <th>DateTime</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>                        
-                        
-                    </tr>
-                </tbody>
+                <tbody></tbody>
                 <tfoot>
                     <tr>
+                        <td><input type="text" name="email" placeholder="email" required></td>
                         <td><input type="text" name="driver" placeholder="driver" required></td>
                         <td><input type="text" name="carNumber" placeholder="car number" required></td>
                         <td><input type="text" name="phone" placeholder="Phone" required></td>
-                        <td><input type="text" name="date/Time" placeholder="date/time" required></td>
-                        <td><button type="submit" onclick="savePerson()">Save</button></td>
+                        <td><input type="text" name="dateTime" placeholder="dateTime" required></td>
+                        <td><button type="submit" onclick="saveDrivers()">Save</button></td>
                     </tr>
                 </tfoot>
             </table>
