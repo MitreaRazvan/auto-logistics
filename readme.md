@@ -18,14 +18,16 @@ the registered persons can add the location from which the goods can be picked u
 - [x] logging in: you can take and finish the available orders.
 - [x] database page for drivers(/drivers.html).
 - [x] database page for orders (/index.html) you can add your orders to your database directly.
+- [x] Contact the support.
+- [x] Logout button.
+- [x] adding myorders button.
 
 ### To do
 - [ ] Register page
-- [ ] Contact the support.
-- [ ] Logout button.
+
 - [ ] add drivers directly from the drivers page.
 - [ ] modify account information.
-- [ ] adding myorders button.
+
 
 
 
