@@ -30,7 +30,7 @@ if (document.querySelector("#orders")) {
 function display(orders) {
   console.warn(orders);
   var list = orders.map(function (info) {
-    if (info.id > 25)
+    if (info.id >= 45 && info.id <= 46)
       return `<tr data-id="${info.id}">
       <td>${info.startcity}</td>
       <td>${info.address}</td>

@@ -2,12 +2,13 @@ var allOrders;
 var allDrivers;
 var editordersId;
 
+//API_URL/METHOD
 var API_URL = {
   CREATE: 'orders',
   READ: 'orders', //data/orders.json
   READ_DRIVERS: 'drivers', //data/orders.json
   ADD: 'orders/add',
-  ADD: 'drivers/add',
+  ADD_DRIVERS: 'drivers/add',
   UPDATE: 'orders/update',
   DELETE: 'orders/delete'
 };
@@ -17,11 +18,13 @@ var API_METHOD = {
   CREATE: 'POST',
   READ: 'GET',
   ADD: 'POST',
+  ADD_DRIVERS:'POST',
   //ADD: 'GET',
   UPDATE: 'PUT',
   DELETE: 'DELETE'
 }
 
+//CONNECTION ORDERS
 if (document.querySelector("#orders")) {
   fetch(API_URL.READ).then(function (r) {
     return r.json()
@@ -32,6 +35,7 @@ if (document.querySelector("#orders")) {
   })
 }
 
+//DISPAY ORDERS
 function display(orders) {
   console.warn(orders);
   var list = orders.map(function (info) {
@@ -48,7 +52,7 @@ function display(orders) {
   document.querySelector("#orders tbody").innerHTML = list.join('');
 }
 
-
+//CONNECTION DRIVERS
 if (document.querySelector("#drivers")) {
   fetch(API_URL.READ_DRIVERS).then(function (r) {
     return r.json()
@@ -57,6 +61,7 @@ if (document.querySelector("#drivers")) {
   })
 }
 
+//DISPLAY DRIVERS
 const drivers = {
   display: function (drivers) {
     var list = drivers.map(function (data) {
@@ -73,6 +78,7 @@ const drivers = {
   }
 }
 
+//SAVE ORDERS
 function saveOrders() {
   var startcity = document.querySelector('[name=startcity]').value;
   var address = document.querySelector('[name=address]').value;
@@ -100,6 +106,8 @@ function submitNewOrders(startcity, address, endcity, delivery, items, driverId,
       dateTime
     });
   }
+
+  //CONNECTION DB-ORDERS
   fetch(API_URL.ADD, {
     method,
     body,
@@ -131,6 +139,7 @@ function inlineAddOrders(startcity, address, endcity, delivery, items, driverId,
   display(allOrders);
 }
 
+//SAVE DRIVERS
 function saveDrivers() {
   var email = document.querySelector('[name=email]').value;
   var driver = document.querySelector('[name=driver]').value;
@@ -145,11 +154,12 @@ function saveDrivers() {
 
 function submitNewDrivers(email, driver, carNumber, phone, dateTime) {
   var body = null;
-  const method = API_METHOD.ADD;
+  const method = API_METHOD.ADD_DRIVERS;
   if (method === 'POST') {
     body = JSON.stringify({ email, driver, carNumber, phone, dateTime });
   }
-  fetch(API_URL.ADD, {
+  //CONNECTION DB-DRIVERS
+  fetch(API_URL.ADD_DRIVERS, {
     method,
     body,
     headers: {

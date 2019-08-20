@@ -20,10 +20,11 @@ var API_METHOD = {
     FINISH: 'PUT',
     UPDATE: 'PUT'
 };
-
+//LOCAL-STORAGE /GETUSER
 function getUser() {
     return JSON.parse(localStorage.getItem('id'));
 }
+// LOAD-ORDERS
 function loadOrders() {
     const user = getUser();
     const userId = user.id;

@@ -49,8 +49,10 @@ Button:active {
 #logo{
   height: 250px;
   width: 250px;
+  padding-right:15px;
   display: block;
   margin-right: auto;
+  float: left;
 }
 .first-button{
   float: left;
@@ -71,6 +73,10 @@ margin-bottom: 25px;
   font-weight: bold;
   padding: 0;
   margin-left: 25px;
+}
+
+#text{
+  padding-top: 100px;
 }
 
 h1 {
