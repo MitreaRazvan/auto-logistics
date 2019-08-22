@@ -137,7 +137,7 @@ function submitOrder(orderId) {
         headers: { "Content-Type": "application/json" }
     }).then(function (r) {
         return r.json();
-    }).then(function (status) {
+    }).then(function (_status) {
         loadOrders();
     });
 };
