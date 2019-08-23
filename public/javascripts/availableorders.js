@@ -204,5 +204,3 @@ function AddOrders() {
     window.location = 'addOrders.html';
     if (localStorage.clear());
 };
-//
-
