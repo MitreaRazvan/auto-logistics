@@ -88,9 +88,9 @@ function display(orders) {
         <td>${info.items}</td>
         <td>${info.dateTime}</td>
         <td>
-        <a href="#" onclick='takeOrder(this)' class="take">&#x1F69A</a>
-        <a herf="#" onclick='finishOrder(this)' class="take1">&#x274C</a>
-        <td>
+        <a href="#" onclick='takeOrder(this)' class="take">&#x1F69A;</a>
+        <a herf="#" onclick='finishOrder(this)' class="take1">&#x2705;</a>
+        </td>
       </tr>`
     });
     document.querySelector("#orders tbody").innerHTML = list.join('');
@@ -193,14 +193,17 @@ function submitLogin(email, car, phone) {
     });
 };
 
-//BUTTONS = LOGOUT/ADD-ORDERS
+//BUTTONS = LOGOUT/HOME
 function LogOut() {
     window.location = 'login.html';
     if (localStorage.clear()) {
         alert('required');
     }
 };
-function AddOrders() {
-    window.location = 'addOrders.html';
-    if (localStorage.clear());
-};
+
+function goHome(){
+    window.location = 'startpage.html'
+    if (localStorage.clear()) {
+      alert('required');
+  }
+  }

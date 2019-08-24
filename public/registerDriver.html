@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Register Driver</title>
+	<link rel="stylesheet" href="stylesheets/login.css" type="text/css">
+</head>
+
+<body style="background: url(1.jpg) no-repeat; background-size: cover">
+	<div class="container">
+		<div class="login">
+			<h1>Register As A Driver</h1>
+			<form id="lgForm" method="post" action="" onsubmit="return false">
+					<td><input id="email" type="text" name="email" placeholder="email" required></td>
+                        <td><input type="text" name="driver" placeholder="driver" required></td>
+                        <td><input type="text" name="carNumber" placeholder="car number" required></td>
+                        <td><input type="text" name="phone" placeholder="Phone" required></td>
+                        <td><input type="text" name="dateTime" placeholder="dateTime" required></td>
+				<p class=""><input type="submit" name="commit" onclick="clickRegister()" value="register"><a href="tel:0732770761"><img id="call" src="callme.gif"></a></p>
+				
+			</form>
+		</div>
+	</div>
+	<script src="javascripts/registerDP.js"></script>
+</body>
+
+</html>

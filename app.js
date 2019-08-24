@@ -10,6 +10,7 @@ var ordersRouter = require('./routes/orders-db');
 var driversRouter = require('./routes/drivers-db');
 var loginRouter = require('./routes/login');
 var addOrdersRouter = require('./routes/addOrders-db');
+var peopleRouter = require('./routes/people-db');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/orders', ordersRouter);
 app.use('/drivers', driversRouter);
 app.use('/login', loginRouter); 
 app.use('/addOrders', addOrdersRouter);
+app.use('/people', peopleRouter);
 
 
 

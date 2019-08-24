@@ -65,6 +65,8 @@ margin-bottom: 25px;
 
 .take1{
  cursor: pointer; 
+ padding-left: 18px;
+ margin-left: 10px;
 }
 
 .take{
@@ -127,7 +129,7 @@ thead:hover{
 
 .tbody td{
   padding: 5px;
-  display: inline-block
+  display: inline-block;
 }
 
 

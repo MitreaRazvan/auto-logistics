@@ -30,8 +30,8 @@ if (document.querySelector("#orders")) {
 function display(orders) {
   console.warn(orders);
   var list = orders.map(function (info) {
-    if (info.id >= 45 && info.id <= 46)
-      return `<tr data-id="${info.id}">
+    if(info.id > 50)
+      return `<tr data-id="${info.id}"> 
       <td>${info.startcity}</td>
       <td>${info.address}</td>
       <td>${info.endcity}</td>
@@ -39,9 +39,9 @@ function display(orders) {
       <td>${info.items}</td>
       <td><a herf="#" onclick='deleteOrder(this)' class="delete">&#10060</a><td>
       </tr>`
-  });
-  document.querySelector("#orders tbody").innerHTML = list.join('');
-}
+    });
+    document.querySelector("#orders tbody").innerHTML = list.join('');
+  }
 
 //ADD ORDERS
 function addOrders() {
@@ -126,6 +126,16 @@ function deleteOrder(link) {
   });
 };
 
-function DriverOrders() {
-  window.location = 'availableorders.html';
+function LogOut() {
+  window.location = 'loginPeople.html'
+  if (localStorage.clear()) {
+      alert('required');
+  }
+}
+
+function goHome(){
+  window.location = 'startpage.html'
+  if (localStorage.clear()) {
+    alert('required');
+}
 }

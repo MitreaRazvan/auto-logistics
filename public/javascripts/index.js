@@ -180,3 +180,29 @@ function submitNewDrivers(email, driver, carNumber, phone, dateTime) {
     display(allDrivers);
   }
 };
+
+//STARTPAGE BUTTON-DROPDOWN
+function dropdown(){
+  const click = document.getElementById("dropcontent");
+  if(click.style.display == "none"){
+    click.style.display = "block";
+  }else{
+    click.style.display = "none";
+  }
+}
+function dropdown1(){
+  const click = document.getElementById("dropcontent1");
+  if(click.style.display == "none"){
+    click.style.display = "block";
+  }else{
+    click.style.display = "none";
+  }
+}
+function dropdown2(){
+  const click = document.getElementById("dropcontent2");
+  if(click.style.display == "none"){
+    click.style.display = "block";
+  }else{
+    click.style.display = "none";
+  }
+}
